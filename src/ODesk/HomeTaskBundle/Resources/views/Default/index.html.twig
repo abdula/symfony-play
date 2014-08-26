@@ -1,5 +1,9 @@
 {% extends '::base.html.twig' %}
+{% block stylesheets %}
+    <link href="{{ asset('bundles/odeskhometask/css/main.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
 {% block body %}
+<div class="task-wrap">
     <p>
         Write sample controller on Symfony that does the following:
         <ul>
@@ -9,12 +13,6 @@
         </ul>
     </p>
     <hr>
-    <style>
-        label {
-            width: 200px;
-            display: block;
-        }
-    </style>
     {{ form(form) }}
     {%  if matrix %}
         <table>
@@ -27,5 +25,6 @@
             {% endfor %}
         </table>
     {%  endif %}
+</div>
 {% endblock %}
 

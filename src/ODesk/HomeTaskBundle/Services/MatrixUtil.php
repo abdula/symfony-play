@@ -5,29 +5,23 @@ namespace ODesk\HomeTaskBundle\Services;
 class MatrixUtil {
 
     public static function genSpiralMatrix($word, $cels) {
-        if (!is_string($word)) {
-            throw new \InvalidArgumentException('Argument "word" must be a string');
-        }
-
+        $word = (string)$word;
         if (!strlen($word)) {
-            throw new \InvalidArgumentException('Word can\t be empty');
+            throw new \InvalidArgumentException('Word can\'t be empty');
         }
 
         $cels = abs(intval($cels));
-        var_dump($cels);
         if (!$cels) {
             throw new \InvalidArgumentException('Side of matrix can\'t be less then 1');
         }
 
         $str = str_repeat($word, ceil($cels * $cels / strlen($word)) + 1);
-        $matrix = array_fill_keys(range(0, $cels - 1), array_fill(0, $cels -1, null));
-
-        $top  = $left = 0;
+        $matrix = array_fill_keys(range(0, $cels - 1), array_fill(0, $cels, null));
+        $top = $left = 0;
         $down = $right= $cels - 1;
         $pos = 0;
 
         while(true) {
-            // Print top row
             for($j = $left; $j <= $right; ++$j) {
                 $matrix[$top][$j] = $str[$pos++];
             }

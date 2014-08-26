@@ -18,16 +18,16 @@ class DefaultController extends Controller
                 'required' => true,
                 'constraints' => array(
                     new Assert\NotBlank(),
-                    new Assert\Length(array('max' => 100))
+                    new Assert\Length(array('min' => 1, 'max' => 100))
                 )
             ))
-            ->add('cels', 'number', array(
+            ->add('cels', 'integer', array(
                 'label' => 'Side of matix',
+                'precision' => 0,
                 'required' => true,
                 'constraints' => array(
                     new Assert\NotBlank(),
-                    new Assert\GreaterThan(array('value' => 0)),
-                    new Assert\Length(array('max' => 8))
+                    new Assert\Range(array('min' => 1, 'max' => 100))
                 )
             ))
             ->add('send', 'submit', array('label' => 'Generate'))
@@ -37,6 +37,7 @@ class DefaultController extends Controller
 
         if ($request->getMethod() == 'POST') {
             $form->handleRequest($request);
+
 
             if ($form->isValid()) {
                 $data = $form->getData();
