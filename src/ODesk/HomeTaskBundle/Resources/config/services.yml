@@ -1,0 +1,6 @@
+parameters:
+    o_desk_home_task.class:      ODesk\HomeTaskBundle\Services\MatrixUtil
+
+services:
+    matrix_util:
+        class: %o_desk_home_task.class%

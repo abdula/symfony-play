@@ -1,0 +1,7 @@
+o_desk_home_task:
+    resource: "@ODeskHomeTaskBundle/Resources/config/routing.yml"
+    prefix:   /
+
+_welcome:
+    path:      /
+    defaults:  { _controller: ODeskHomeTaskBundle:Default:index }

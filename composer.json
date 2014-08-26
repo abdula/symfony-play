@@ -1,0 +1,24 @@
+{
+    "name": "odesk/interview",
+    "license": "MIT",
+    "type": "project",
+    "description": "Test Tasks for PHP Interviews",
+    "autoload": {
+        "psr-0": { "": "src/", "Interview": "app/" }
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": "2.5.*"
+    },
+    "require-dev": {
+        "sensio/generator-bundle": "~2.3"
+    },
+    "scripts": {},
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web"
+    }
+}

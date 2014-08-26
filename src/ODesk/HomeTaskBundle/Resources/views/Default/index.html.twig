@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <p>
+        Write sample controller on Symfony that does the following:
+        <ul>
+            <li>on the page a user enters a word and size of side of matrix and clicks on submit button</li>
+            <li>on opened page user sees filled form and matrix</li>
+            <li>matrix contains word which fills cells of matrix from the top left corner by spiral to center</li>
+        </ul>
+    </p>
+    <hr>
+    <style>
+        label {
+            width: 200px;
+            display: block;
+        }
+    </style>
+    {{ form(form) }}
+    {%  if matrix %}
+        <table>
+            {% for i,row in matrix %}
+                <tr>
+                    {% for j,val in row %}
+                        <td>{{val}}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    {%  endif %}
+{% endblock %}
+

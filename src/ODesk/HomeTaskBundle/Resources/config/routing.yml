@@ -1,0 +1,3 @@
+o_desk_home_task_homepage:
+    path:     /hometask
+    defaults: { _controller: ODeskHomeTaskBundle:Default:index }
